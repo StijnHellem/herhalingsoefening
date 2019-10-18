@@ -15,6 +15,10 @@ html {
 }
 /* stylelint-enable */
 
+body {
+  font-family: var(--fontFamily);
+}
+
 .prices {
   background-color: var(--backgroundColor);
 }
@@ -29,4 +33,20 @@ html {
 
 .visually-hidden {
   display: none;
+}
+
+.title_mini {
+  text-transform: uppercase;
+  margin: var(--marginBig) 0 0 var(--marginBig);
+}
+
+.emptystate {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.emptystate__content {
+  font-size: var(--fontSizeRegular);
+  color: var(--colorGreyDark);
 }
