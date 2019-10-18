@@ -13,3 +13,18 @@ html {
   box-sizing: inherit;
 }
 /* stylelint-enable */
+
+.prices {
+  background-color: var(--backgroundColor);
+}
+
+.prices__list {
+  padding: var(--marginBig);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.2rem;
+}
+
+.visually-hidden {
+  display: none;
+}
