@@ -1,6 +1,9 @@
 footer {
   background-color: black;
   height: 8.5rem;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 ul {
