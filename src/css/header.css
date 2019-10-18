@@ -1,3 +1,44 @@
+img {
+  margin: var(--marginBig);
+}
+
+img::before {
+  content: '';
+  background-image: url(../assets/img/leaf.png);
+  width: 100%;
+  height: 100%;
+}
+
 header {
   background-color: var(--backgroundColor);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header__titles {
+  margin-left: var(--marginBig);
+  width: 75%;
+}
+
+.h2-like {
+  font-family: var(--fontFamily);
+  font-style: normal;
+  font-weight: var(--fontWeightBold);
+  font-size: var(--fontSizeSmall);
+  line-height: 14px;
+  color: var(--textColor);
+  text-transform: uppercase;
+}
+
+.h1-like {
+  font-family: var(--fontFamily);
+  font-style: normal;
+  font-weight: var(--fontWeightBold);
+  font-size: var(--fontSizeBig);
+  line-height: 28px;
+
+  &::after {
+    content: ' 🌱';
+  }
 }
