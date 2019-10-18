@@ -1,0 +1,43 @@
+footer {
+  background-color: black;
+  height: 8.5rem;
+}
+
+ul {
+  display: flex;
+  justify-content: space-around;
+  color: #564f4f;
+}
+
+li {
+  font-size: var(--fontSizeSmall);
+}
+
+.navigation__item {
+  position: relative;
+  top: 6rem;
+}
+
+.navigation__item--home {
+  color: #b7b7b7;
+}
+
+.navigation__item--home::before {
+  content: url(../assets/img/home.svg);
+  position: absolute;
+  bottom: 1.5rem;
+
+}
+
+.navigation__item--about::before {
+  content: url(../assets/img/about.svg);
+  position: absolute;
+  bottom: 1.5rem;
+
+}
+
+.navigation__item--admin::before {
+  content: url(../assets/img/admin.svg);
+  position: absolute;
+  bottom: 1.5rem;
+}
