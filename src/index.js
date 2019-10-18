@@ -20,6 +20,18 @@ data.coffees.forEach(drink => {
     `;
   }
 });
+
+console.log(document.querySelector(`.price__button__plus`));
+document.querySelector(`html`).addEventListener(`click`, handleClickField);
+
+document.querySelectorAll(`.price__button__plus`).forEach($button => $button.addEventListener(`click`, handleClickField));
+
+const handleClickField = () => {
+  console.log('click');
+};
+
+
+
 devineLog('Hey, ik ben een JS file');
 const arr = [1, 2,  3];
 
