@@ -59,12 +59,17 @@ const handleClickField = e => {
     });
   }
   const $total = document.querySelectorAll(`.order__price`);
+  let total = 0;
   $total.forEach(order => {
     console.log(order.textContent.split(' '));
     const split = order.textContent.split(' ');
-    console.log(parseInt(split[1]));
-
+    console.log(parseFloat(split[1]));
+    total = total + (parseFloat(split[1]));
+    console.log(total);
   });
+  document.querySelector(`.total__price`).innerHTML = `
+  &euro; <span>${total}</span>`;
+
 };
 
 const init = () => {
@@ -76,6 +81,7 @@ const init = () => {
       button.addEventListener(`click`, handleClickField);
     });
   }
+
 
 };
 init();
