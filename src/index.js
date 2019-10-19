@@ -81,6 +81,15 @@ const handleClickField = e => {
   document.querySelector(`.total__price`).innerHTML = `
   &euro; <span>${total}</span>`;
 
+
+  if (document.querySelector(`.orders`).innerHTML !== ' ') {
+    document.querySelector(`.emptystate`).classList.add(`visually-hidden`);
+    document.querySelector(`.emptystate`).classList.remove(`emptystate`);
+  }
+  else {
+    document.querySelector(`.emptystate`).classList.remove(`visually-hidden`);
+    document.querySelector(`.emptystate`).classList.add(`emptystate`);
+  }
 };
 
 const handleRemoveField = e => {
@@ -95,9 +104,15 @@ const handleRemoveField = e => {
     if (button.dataset.id === e.target.dataset.delete) {
 
       button.setAttribute(`data-amount`, 0);
-     
+
     }
   });
+  if (document.querySelector(`.visual`)) {
+    document.querySelector(`.visual`).classList.add(`emptystate`);
+    document.querySelector(`.visual`).classList.remove(`visually-hidden`);
+
+  }
+
 };
 
 const init = () => {
