@@ -36,11 +36,17 @@ const handleClickField = e => {
                       <span class="order__amount">${e.target.dataset.amount}x</span> ${plantbasedCoffees[e.target.dataset.id].name}
                     </span>
                     <span class="order__price">&euro; ${plantbasedCoffees[e.target.dataset.id].prices.medium}</span>
-                    <button class="remove">
+                    <button class="remove" data-delete="${e.target.dataset.id}">
                       x
                     </button>
                   </li>
       `;
+
+    if (document.querySelectorAll(`.remove`)) {
+      document.querySelectorAll(`.remove`).forEach(button => {
+        button.addEventListener(`click`, handleRemoveField);
+      });
+    }
   }
   else {
     document.querySelectorAll(`.order`).forEach(order => {
@@ -52,9 +58,14 @@ const handleClickField = e => {
         <span class="order__amount">${e.target.dataset.amount}x</span> ${plantbasedCoffees[e.target.dataset.id].name}
       </span>
       <span class="order__price">&euro; ${e.target.dataset.amount * plantbasedCoffees[e.target.dataset.id].prices.medium}</span>
-      <button class="remove">
+      <button class="remove" data-delete="${e.target.dataset.id}">
         x
       </button>`;
+      }
+      if (document.querySelectorAll(`.remove`)) {
+        document.querySelectorAll(`.remove`).forEach(button => {
+          button.addEventListener(`click`, handleRemoveField);
+        });
       }
     });
   }
@@ -72,6 +83,23 @@ const handleClickField = e => {
 
 };
 
+const handleRemoveField = e => {
+  document.querySelectorAll(`.order`).forEach(order => {
+    if (order.dataset.id === e.target.dataset.delete) {
+
+      order.setAttribute(`data-amount`, 0);
+      order.remove();
+    }
+  });
+  document.querySelectorAll(`.price__button__plus`).forEach(button => {
+    if (button.dataset.id === e.target.dataset.delete) {
+
+      button.setAttribute(`data-amount`, 0);
+     
+    }
+  });
+};
+
 const init = () => {
   const plantbasedCoffees = data.coffees.filter(coffee => coffee.plantbased === true);
   createOptions(plantbasedCoffees);
@@ -81,6 +109,7 @@ const init = () => {
       button.addEventListener(`click`, handleClickField);
     });
   }
+
 
 
 };
