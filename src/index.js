@@ -1,29 +1,29 @@
 import './style.css';
-import {devineLog} from './js/utility/helpers';
+//import {devineLog} from './js/utility/helpers';
 import data from './assets/data/coffees.json';
 
-console.log(data);
-console.log(data.coffees);
-const plantbasedCoffees = data.coffees.filter(coffee => coffee.plantbased === true);
-console.log(plantbasedCoffees);
-plantbasedCoffees.forEach(drink => {
-  //console.log(parseInt(drink.id));
-  document.querySelector(`.prices__list`).innerHTML += `
-    <li class="price">
-    <a class="price__button">
-      <span class="price__button__wrapper">
-        <span class="price__button__name">${drink.name}</span>
-        <span class="price__button__amount">&euro; ${drink.prices.medium}</span>
-      </span>
-      <span class="price__button__plus" data-id="${parseInt(drink.id) - 1}" data-amount="0">+</span>
-    </a>
-    </li>
-    `;
+const createOptions = plantbasedCoffees => {
+  console.log(plantbasedCoffees);
+  plantbasedCoffees.forEach(drink => {
+    document.querySelector(`.prices__list`).innerHTML += `
+      <li class="price">
+      <a class="price__button">
+        <span class="price__button__wrapper">
+          <span class="price__button__name">${drink.name}</span>
+          <span class="price__button__amount">&euro; ${drink.prices.medium}</span>
+        </span>
+        <span class="price__button__plus" data-id="${parseInt(drink.id) - 1}" data-amount="0">+</span>
+      </a>
+      </li>
+      `;
 
-});
+  });
+};
+
 
 
 const handleClickField = e => {
+  const plantbasedCoffees = data.coffees.filter(coffee => coffee.plantbased === true);
   e.target.setAttribute(`data-amount`, parseInt(e.target.dataset.amount) + 1);
 
   // console.log(data.coffees[e.target.dataset.id].prices.medium);
@@ -57,7 +57,6 @@ const handleClickField = e => {
       </button>`;
       }
     });
-    // document.querySelector(`.order__amount`).textContent = `${e.target.dataset.amount}`;
   }
   const $total = document.querySelectorAll(`.order__price`);
   $total.forEach(order => {
@@ -68,16 +67,15 @@ const handleClickField = e => {
   });
 };
 
+const init = () => {
+  const plantbasedCoffees = data.coffees.filter(coffee => coffee.plantbased === true);
+  createOptions(plantbasedCoffees);
 
+  if (document.querySelectorAll(`.price__button__plus`)) {
+    document.querySelectorAll(`.price__button__plus`).forEach(button => {
+      button.addEventListener(`click`, handleClickField);
+    });
+  }
 
-document.querySelectorAll(`.price__button__plus`).forEach(button => {
-  button.addEventListener(`click`, handleClickField);
-});
-
-
-
-devineLog('Hey, ik ben een JS file');
-const arr = [1, 2,  3];
-
-const ES6Stuff = () => devineLog('Ik kan ES6 stuff aan', ...arr);
-ES6Stuff();
+};
+init();
