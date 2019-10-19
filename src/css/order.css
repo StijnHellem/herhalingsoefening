@@ -1,0 +1,29 @@
+.orders {
+  display: flex;
+  flex-direction: column;
+}
+
+.order {
+  display: grid;
+  grid-template-columns: auto 15% 10%;
+  border-bottom: 1px solid #efefef;
+  padding: var(--marginMedium) var(--marginBig);
+}
+
+.order__name {
+  font-size: var(--fontSizeRegular);
+}
+
+.order__price {
+  font-size: var(--fontSizeRegular);
+}
+
+.order__amount {
+  color: var(--backgroundColor);
+}
+
+.remove {
+  font-size: var(--fontSizeRegular);
+  color: var(--colorGreyDark);
+
+}

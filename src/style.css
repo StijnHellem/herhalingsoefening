@@ -3,6 +3,7 @@
 @import './css/header.css';
 @import './css/drink.css';
 @import './css/footer.css';
+@import './css/order.css';
 
 html {
   box-sizing: border-box;
