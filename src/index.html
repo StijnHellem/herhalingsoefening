@@ -17,8 +17,29 @@
         </a>
         <h1 class="h1-like">What do you want to order?</h1>
       </div>
-      <img srcset="./assets/img/coffee.png 67w,
-      ./assets/img/coffee@2x.png 134w" sizes="67px" src="./assets/img/coffee.png" alt="coffee">
+      <picture>
+        <source
+          srcset="
+          ./assets/img/coffee.webp 67w,
+          ./assets/img/coffee@2x.webp 134w
+        "
+          sizes="67px"
+          type="image/webp"
+        />
+        <source
+          srcset="
+            ./assets/img/coffee.png 67w,
+            ./assets/img/coffee@2x.png 134w
+          "
+          sizes="67px"
+          type="image/png"
+        />
+        <img
+          class="img--full"
+          src="./assets/img/coffee.png"
+          alt="coffee"
+        />
+      </picture>
     </header>
     <section class="prices highlight spaced">
       <h2 class="visually-hidden">Price list</h2>
@@ -47,9 +68,29 @@
         </p>
       </div>
       <div class="emptystate visual">
-        <img srcset="./assets/img/coffee-maker.jpg 67w,
-          ./assets/img/coffee-maker@2x.jpg 134w" sizes="67px" src="./assets/img/coffee-maker.jpg" alt="A coffee maker">
-
+          <picture>
+              <source
+                srcset="
+                ./assets/img/coffee-maker.webp 67w,
+                ./assets/img/coffee-maker@2x.webp 134w
+              "
+                sizes="67px"
+                type="image/webp"
+              />
+              <source
+                srcset="
+                  ./assets/img/coffee-maker.jpg 67w,
+                  ./assets/img/coffee-maker@2x.jpg 134w
+                "
+                sizes="67px"
+                type="image/jpg"
+              />
+              <img
+                class="img--full"
+                src="./assets/img/coffee-maker.jpg"
+                alt="coffee maker"
+              />
+            </picture>
         <span class="emptystate__content">
           Please order something
           <span role="img" aria-label="Drunk emoji">
