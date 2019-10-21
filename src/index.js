@@ -30,8 +30,7 @@ const handleClickField = e => {
   // console.log(plantbasedCoffees[e.target.dataset.id].name);
 
   if (e.target.dataset.amount < 2) {
-    document.querySelector(`.orders`).innerHTML += `
-      <li class="order" data-id="${e.target.dataset.id}">
+    document.querySelector(`.orders`).innerHTML += `<li class="order" data-id="${e.target.dataset.id}">
                     <span class="order__name">
                       <span class="order__amount">${e.target.dataset.amount}x</span> ${plantbasedCoffees[e.target.dataset.id].name}
                     </span>
@@ -39,8 +38,7 @@ const handleClickField = e => {
                     <button class="remove" data-delete="${e.target.dataset.id}">
                       x
                     </button>
-                  </li>
-      `;
+                  </li>`;
 
     if (document.querySelectorAll(`.remove`)) {
       document.querySelectorAll(`.remove`).forEach(button => {
@@ -81,6 +79,9 @@ const handleClickField = e => {
   document.querySelector(`.total__price`).innerHTML = `
   &euro; <span>${total}</span>`;
 
+  if (document.querySelector(`.orders`).innerHTML !== ' ') {
+    document.querySelector(`.total`).classList.remove(`visually-hidden`);
+  }
 
   if (document.querySelector(`.orders`).innerHTML !== ' ') {
     document.querySelector(`.emptystate`).classList.add(`visually-hidden`);
@@ -98,6 +99,7 @@ const handleRemoveField = e => {
 
       order.setAttribute(`data-amount`, 0);
       order.remove();
+
     }
   });
   document.querySelectorAll(`.price__button__plus`).forEach(button => {
@@ -107,11 +109,12 @@ const handleRemoveField = e => {
 
     }
   });
-  if (document.querySelector(`.visual`)) {
-    document.querySelector(`.visual`).classList.add(`emptystate`);
+  if (document.querySelector(`.orders`).innerHTML === '') {
     document.querySelector(`.visual`).classList.remove(`visually-hidden`);
-
+    document.querySelector(`.visual`).classList.add(`emptystate`);
+    document.querySelector(`.total`).classList.add(`visually-hidden`);
   }
+
 
 };
 
@@ -125,7 +128,7 @@ const init = () => {
     });
   }
 
-
+  document.querySelector(`.total`).classList.add(`visually-hidden`);
 
 };
 init();
