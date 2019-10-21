@@ -63,12 +63,14 @@ body {
   .layout {
     display: grid;
     grid-template-columns: 1fr 2fr;
+    grid-template-rows: .5fr 2fr;
     height: 100vh;
     overflow-y: hidden;
   }
 
   .prices {
     grid-column: 1 / span 1;
+    margin-top: -2rem;
   }
 
   .content {
@@ -86,12 +88,15 @@ body {
   }
 
   header {
-    margin-bottom: -5rem;
 
+    & img {
+      position: absolute;
+      bottom: 7.5rem;
+      left: 7rem;
+    }
   }
 
-  header img {
-    position: absolute;
-    bottom: 10rem;
+  .price:nth-child(4) {
+    display: block;
   }
 }

@@ -43,3 +43,7 @@
 .order__wrapper {
   position: relative;
 }
+
+.title_mini {
+  font-size: calc(var(--fontSizeRegular) - .2rem);
+}
