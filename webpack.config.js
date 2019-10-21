@@ -8,7 +8,8 @@ module.exports = (env, {mode}) => {
   console.log(mode);
   return {
     output: {
-      filename: '[name].[hash].js'
+      path: require('path').resolve(__dirname, 'public'),
+      filename: '[name].[hash].js',
     },
     devServer: {
       overlay: true,

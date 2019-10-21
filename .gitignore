@@ -1,6 +1,9 @@
 # Dist folder
 dist/
 
+# Public folder
+public/
+
 # Logs
 logs
 *.log

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="nl">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500&display=swap" rel="stylesheet">
+  <title>The Plant-Based Barista</title>
+<link href="style.b63a6982d01d4a05de58.css" rel="stylesheet"></head>
+
+<body>
+  <main class="layout">
+    <header class="header highlight spaced">
+      <div class="header__titles">
+        <a class="h2-like">
+          The Plant-Based Barista
+        </a>
+        <h1 class="h1-like">What do you want to order?</h1>
+      </div>
+      <picture>
+        <source
+          srcset="assets/img/coffee.webp 67w,assets/img/coffee@2x.webp 134w
+        "
+          sizes="67px"
+          type="image/webp"
+        />
+        <source
+          srcset="assets/img/coffee.png 67w,assets/img/coffee@2x.png 134w
+          "
+          sizes="67px"
+          type="image/png"
+        />
+        <img
+          class="img--full"
+          src="assets/img/coffee.png"
+          alt="coffee"
+        />
+      </picture>
+    </header>
+    <section class="prices highlight spaced">
+      <h2 class="visually-hidden">Price list</h2>
+      <ul class="prices__list">
+        <!--
+          TEMPLATE
+          <li class="price">
+            <a class="price__button">
+              <span class="price__button__wrapper">
+                <span class="price__button__name">Drink name</span>
+                <span class="price__button__amount">&euro; 3,00</span>
+              </span>
+              <span class="price__button__plus">+</span>
+            </a>
+          </li>
+        -->
+      </ul>
+    </section>
+    <section class="content spaced">
+      <h2 class="title_mini">Order</h2>
+      <div class="orders__wrapper hide">
+        <ul class="orders"></ul>
+        <p class="total">
+          <span class="total__label">Total price</span>
+          <span class="total__price">&euro; <span>0,00</span></span>
+        </p>
+      </div>
+      <div class="emptystate visual">
+          <picture>
+              <source
+                srcset="assets/img/coffee-maker.webp 67w,assets/img/coffee-maker@2x.webp 134w
+              "
+                sizes="67px"
+                type="image/webp"
+              />
+              <source
+                srcset="assets/img/coffee-maker.jpg 67w,assets/img/coffee-maker@2x.jpg 134w
+                "
+                sizes="67px"
+                type="image/jpg"
+              />
+              <img
+                class="img--full"
+                src="assets/img/coffee-maker.jpg"
+                alt="coffee maker"
+              />
+            </picture>
+        <span class="emptystate__content">
+          Please order something
+          <span role="img" aria-label="Drunk emoji">
+            🤪
+          </span>
+        </span>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <nav>
+      <ul class="navigation">
+        <li class="navigation__item navigation__item--home">Home</li>
+        <li class="navigation__item navigation__item--about">About</li>
+        <li class="navigation__item navigation__item--admin">Admin</li>
+      </ul>
+    </nav>
+  </footer>
+<script type="text/javascript" src="main.f7aad7290803bdb9796d.js"></script></body>
+
+</html>
